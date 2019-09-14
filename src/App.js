@@ -15,16 +15,14 @@ import Arial from './Arial';
  */
 class App extends Component {
   state = {
-    currentFont: undefined,
     currentFontComponent: undefined,
   }
 
   // Add the select option value to the state at currentFont
   onChange = value => {
     console.log(`selected ${value}`)
-    let currentFont = `/${value}`;
     let currentFontComponent = value.charAt(0).toUpperCase() + value.slice(1);
-    this.setState({ currentFont, currentFontComponent })
+    this.setState({ currentFontComponent })
   }
 
   onBlur = () => {
@@ -45,8 +43,9 @@ class App extends Component {
     return (
       <>
 
-        <h1>Hello World</h1>
-
+        <h1>Font Tester</h1>
+        <h2>Try and discover new fonts !</h2>
+        <strong>Choose your font : </strong>
         {/* This is the Select from antd, onChange with option choice execute the onChange function */}
         <Select
           showSearch
@@ -66,7 +65,7 @@ class App extends Component {
         </Select>
 
 
-        <Arial prop={this.state.currentFont} />
+        <Arial prop={this.state.currentFontComponent} />
 
       </>
     )
