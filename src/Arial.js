@@ -1,7 +1,7 @@
 /**
  * NPM Import
  */
-import React from 'react';
+import React, { Component } from 'react';
 
 /**
  * LOCAL Import
@@ -11,26 +11,40 @@ import React from 'react';
 /**
  * CODE Here
  */
-const Arial = ({ prop }) => {
+
+class Arial extends Component {
+  state = {
+    myText: undefined,
+  }
+
+  handleChange = (event) => {
+    let writeText = event.target.value;
+    this.setState({myText: writeText})
+  }
+
+  render() {
+    const { currentFontComponent } = this.props
+    const { myText } = this.state
     return (
       <>
-        <h1>{prop}</h1>
         <div id="container">
             <div id="left-side">
                 <h2>Write your text</h2>
                 <textarea 
+                  onChange={this.handleChange}
                 />
             </div>
             <div id="right-side">
                 <h2>See the result</h2>
                 <div id="result">
                   {/* Custom p style here directly with font prop (and bold if you want) */}
-                  <p></p>
+                  <p style={{fontFamily: `${currentFontComponent}`}}>{myText}</p>
                 </div>
             </div>
         </div>
       </>
     )
+  }
 }
 
  /**

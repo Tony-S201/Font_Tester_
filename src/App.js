@@ -25,6 +25,10 @@ class App extends Component {
     this.setState({ currentFontComponent })
   }
 
+  // onTextChange = () => {
+  //   this.setState({myText: !this.state.myText})
+  // }
+
   onBlur = () => {
     console.log('blur')
   }
@@ -39,12 +43,13 @@ class App extends Component {
 
 
   render () {
-    const { Option } = Select;
+    const { Option } = Select
+    const { currentFontComponent } = this.state
     return (
       <>
 
         <h1>Font Tester</h1>
-        <h2>Try and discover new fonts !</h2>
+        <h2>A selection of my favorites fonts that you can try !</h2>
         <strong>Choose your font : </strong>
         {/* This is the Select from antd, onChange with option choice execute the onChange function */}
         <Select
@@ -60,12 +65,15 @@ class App extends Component {
           option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
           }
         >
-          <Option value="arial">Arial</Option>
-          <Option value="verdana">Verdana</Option>
+          <Option value="arial" style={{fontFamily: 'Arial'}}>Arial</Option>
+          <Option value="verdana" style={{fontFamily: 'Verdana'}}>Verdana</Option>
+          <Option value="courier" style={{fontFamily: 'Courier'}}>Courier</Option>
+          <Option value="impact" style={{fontFamily: 'Impact'}}>Impact</Option>
         </Select>
 
+        <h1 style={{fontFamily: `${currentFontComponent}`}}>{currentFontComponent}</h1>
 
-        <Arial prop={this.state.currentFontComponent} />
+        <Arial currentFontComponent={currentFontComponent} />
 
       </>
     )
