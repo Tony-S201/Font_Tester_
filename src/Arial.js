@@ -2,6 +2,7 @@
  * NPM Import
  */
 import React, { Component } from 'react';
+import DOMPurify from 'dompurify'; 
 
 /**
  * LOCAL Import
@@ -38,7 +39,7 @@ class Arial extends Component {
                 <h2>See the result</h2>
                 <div id="result">
                   {/* Custom p style here directly with font prop (and bold if you want) */}
-                  <p style={{fontFamily: `${currentFontComponent}`}}>{myText}</p>
+                  <p style={{fontFamily: `${currentFontComponent}`}}>{DOMPurify.sanitize(myText)}</p>
                 </div>
             </div>
         </div>
