@@ -1,19 +1,183 @@
 @import '~antd/dist/antd.css';
 
+/* Result Zone */
 #result {
-  height: 200px;
-  width: 200px;
   border: 2px solid grey;
 }
-
+/* __________ GLOBAL STYLE _____________ */
+/* Color Picker */
 .sketch-picker {
   background: none !important;
 }
-
+/* Ant Select */
 .ant-select-selection {
   background: none !important;
 }
+/* Select Value Color */
+.ant-select-selection-selected-value {
+  color: #736D78;
+}
+/* Big container of the app */
+#big-wrapper {
+  padding: 3vh;
+}
+/* The big title */
+#big-title {
+  text-align: center;
+}
+/* The subtitle */
+#subtitle {
+  text-align: center;
+}
+/* _________ Mobile and Tablet Device __________ */
+@media screen and (max-width: 959px) {
+  /* FONT SIZE */
+  #switchTheme {
+    font-size: 1rem;
+  }
+  #rightSide h2 {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  #leftSide span {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  /* Three Select Container */
+  #selectList {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .selectElement {
+    padding: 5px;
+  }
+  .selectElement strong {
+    padding-right: 2px;
+  }
+  /* Size Change Container */
+  #sizeElement {
+    display: flex;
+    justify-content: center;
+  }
+  #sizeElement strong {
+    align-self: center;
+  }
+  .ant-slider {
+    width: 200px;
+    display: inline-block;
+  }
+  /* Bottom Zone with two sides */
+  #bottomZone {
+    width: 100%;
+  }
+  /* The left side - TEXTAREA + RESULT */
+  #rightSide {
+    width: 100%;
+    padding: 1vh;
+  }
+  textarea {
+    width: 100%;
+    height: 125px;
+    overflow: auto;
+  }
+  #result {
+    width: 100%;
+    height: 125px;
+    overflow: auto;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+  }
+  /* The right side - COLOR PICKER */
+  #leftSide {
+    width: 100%;
+    padding: 1vh;
+    text-align: center;
+  }
+  .sketch-picker {
+    margin: 0 auto;
+  }
+  /* Logo image */
+  .bigImage {
+    margin: 0 auto;
+    width: 50%;
+  }
+}
 
-.ant-input-number {
-  background: none !important;
+/* _________ Desktop __________ */
+@media screen and (min-width: 960px) {
+  /* FONT SIZE */
+  #switchTheme {
+    font-size: 1rem;
+  }
+  #rightSide h2 {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  #leftSide span {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  /* Three Select Container */
+  #selectList {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+  }
+  .selectElement {
+    padding: 5px;
+  }
+  .selectElement strong {
+    padding-right: 2px;
+  }
+  /* Size Change Container */
+  #sizeElement {
+    display: flex;
+    justify-content: center;
+  }
+  #sizeElement strong {
+    align-self: center;
+  }
+  .ant-slider {
+    width: 640px;
+    display: inline-block;
+  }
+  /* Bottom Zone with two sides */
+  #bottomZone {
+    display: flex;
+    justify-content: center;
+  }
+  /* The left side - TEXTAREA + RESULT */
+  #rightSide {
+    width: 350px;
+    padding: 1vh;
+  }
+  textarea {
+    width: 100%;
+    height: 125px;
+    overflow: auto;
+  }
+  #result {
+    width: 100%;
+    height: 135px;
+    overflow: auto;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+  }
+  /* The right side - COLOR PICKER */
+  #leftSide {
+    width: 350px;
+    padding: 1vh;
+    text-align: center;
+  }
+  .sketch-picker {
+    margin: 0 auto;
+    width: 250px !important;
+  }
+  /* Logo image */
+  .bigImage {
+    margin: 0 auto;
+    width: 50%;
+  }
 }

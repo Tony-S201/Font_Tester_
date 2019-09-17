@@ -24,26 +24,22 @@ class Arial extends Component {
   }
 
   render() {
-    const { currentFontComponent } = this.props
-    const { currentFontWeight } = this.props
-    const { themeFontColor } = this.props
-    const { colorPicker } = this.props
+    const { currentFontComponent, currentFontWeight, themeFontColor, colorPicker, currentSize, currentFontStyle } = this.props
     const { myText } = this.state
-    const { currentSize } = this.props
     return (
       <>
-        <div id="container">
-            <div id="left-side">
-                <h2 style={{color: themeFontColor}}>Write your text</h2>
+        <div id="rightSide">
+            <div id="resultLeft">
+                <h2 style={{color: themeFontColor, fontFamily: 'Roboto, sans-serif'}}>Write your text</h2>
                 <textarea 
                   onChange={this.handleChange}
                 />
             </div>
-            <div id="right-side">
-                <h2 style={{color: themeFontColor}}>See the result</h2>
-                <div id="result">
+            <div id="resultRight">
+                <h2 style={{color: themeFontColor, fontFamily: 'Roboto, sans-serif'}}>Your text in <span style={{fontFamily: `${currentFontComponent}, sans-serif`, color: themeFontColor}}>{currentFontComponent}</span></h2>
+                <div id="result" style={{fontFamily: `${currentFontComponent}, sans-serif`, fontWeight: currentFontWeight, color: colorPicker, fontSize: `${currentSize}px`, fontStyle: currentFontStyle}}>
                   {/* Custom p style here directly with font prop (and bold if you want) */}
-                  <p style={{fontFamily: `${currentFontComponent}, sans-serif`, fontWeight: currentFontWeight, color: colorPicker, fontSize: `${currentSize}px`}}>{DOMPurify.sanitize(myText)}</p>
+                  {DOMPurify.sanitize(myText)}
                 </div>
             </div>
         </div>
