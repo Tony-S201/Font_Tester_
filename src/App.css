@@ -19,7 +19,7 @@
 }
 /* Big container of the app */
 #big-wrapper {
-  padding: 3vh;
+  padding: 2vh;
 }
 /* The big title */
 #big-title {
@@ -28,6 +28,13 @@
 /* The subtitle */
 #subtitle {
   text-align: center;
+}
+.switchTheme {
+  text-align: center;
+}
+footer {
+  text-align: center;
+  margin-top: 2vh;
 }
 /* _________ Mobile and Tablet Device __________ */
 @media screen and (max-width: 959px) {
@@ -99,8 +106,9 @@
   }
   /* Logo image */
   .bigImage {
+    display: block;
     margin: 0 auto;
-    width: 50%;
+    width: 100%;
   }
 }
 
@@ -177,7 +185,13 @@
   }
   /* Logo image */
   .bigImage {
+    display: block;
     margin: 0 auto;
-    width: 50%;
+    width: 700px;
+    padding-bottom: 2vh;
+  }
+  /* Subtitle */
+  #subtitle {
+    margin: 2vh 0;
   }
 }

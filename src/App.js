@@ -9,6 +9,7 @@ import { SketchPicker } from 'react-color';
  */
 import './App.css';
 import Arial from './Arial';
+import Footer from './Footer';
 import { FontList } from './FontList';
 
 /**
@@ -37,7 +38,6 @@ class App extends Component {
     let currentFontWeight = value;
     this.setState({ currentFontWeight })
   }
-
   
   onChangeTheme = checked => {
     if (checked === false) {
@@ -61,34 +61,17 @@ class App extends Component {
   onSizeChange = (value) => {
     this.setState({currentSize: value})
   }
-  // onTextChange = () => {
-  //   this.setState({myText: !this.state.myText})
-  // }
-
-  onBlur = () => {
-    console.log('blur')
-  }
-
-  onFocus = () => {
-    console.log('focus')
-  }
-
-  onSearch = (val) => {
-    console.log('search:', val)
-  }
-
 
   render () {
     const { Option } = Select
     const { currentFontComponent, currentFontWeight, themeFontColor, inputBackgroundColor, colorPicker, currentSize, currentFontStyle, currentLogo } = this.state    
     return (
       <div id="big-wrapper">
+        <img src="/font_tester.png" className="bigImage" alt="website logo" />
         <div className="switchTheme">
           <strong id="switchTheme" style={{color: themeFontColor, fontFamily: 'Roboto, sans-serif'}}>Switch theme </strong>
           <Switch onChange={this.onChangeTheme} />
         </div>
-        
-        {currentLogo === 'on' ? (<img src="/fontwhite.png" className="bigImage" alt="website logo" />) : <img src="/fontdark.png" className="bigImage" alt="website logo" />}
 
         <h2 id="subtitle" style={{color: themeFontColor, fontFamily: 'Roboto, sans-serif'}}>A selection of my favorites fonts !</h2>
 
@@ -169,6 +152,8 @@ class App extends Component {
           </div>
           <Arial currentFontComponent={currentFontComponent} currentFontWeight={currentFontWeight} themeFontColor={themeFontColor} colorPicker={colorPicker} currentSize={currentSize} currentFontStyle={currentFontStyle} /> 
         </div>
+
+        <Footer />
 
       </div>
     )

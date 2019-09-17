@@ -38,7 +38,6 @@ class Arial extends Component {
             <div id="resultRight">
                 <h2 style={{color: themeFontColor, fontFamily: 'Roboto, sans-serif'}}>Your text in <span style={{fontFamily: `${currentFontComponent}, sans-serif`, color: themeFontColor}}>{currentFontComponent}</span></h2>
                 <div id="result" style={{fontFamily: `${currentFontComponent}, sans-serif`, fontWeight: currentFontWeight, color: colorPicker, fontSize: `${currentSize}px`, fontStyle: currentFontStyle}}>
-                  {/* Custom p style here directly with font prop (and bold if you want) */}
                   {DOMPurify.sanitize(myText)}
                 </div>
             </div>
