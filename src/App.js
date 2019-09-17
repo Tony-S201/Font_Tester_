@@ -132,7 +132,7 @@ class App extends Component {
         <InputNumber min={1} max={48} onChange={this.onSizeChange} />
         
         <strong style={{color: themeFontColor}}>Color : </strong>
-        <SketchPicker onChangeComplete={this.onPickerChange} color={colorPicker} />
+        <SketchPicker onChangeComplete={this.onPickerChange} color={colorPicker} disableAlpha />
 
         <h1 style={{fontFamily: `${currentFontComponent}, sans-serif`, color: themeFontColor}}>{currentFontComponent}</h1>
 

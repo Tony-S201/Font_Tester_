@@ -5,3 +5,15 @@
   width: 200px;
   border: 2px solid grey;
 }
+
+.sketch-picker {
+  background: none !important;
+}
+
+.ant-select-selection {
+  background: none !important;
+}
+
+.ant-input-number {
+  background: none !important;
+}
